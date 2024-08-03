@@ -11,7 +11,12 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 );
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -63,8 +68,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      themeMode:ThemeMode.system,
-
+      themeMode: ThemeMode.system,
       home: const Expenses(),
     );
   }
